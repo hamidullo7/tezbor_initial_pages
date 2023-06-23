@@ -23,30 +23,30 @@ Simply intstall and use this. Note: Package use sms_autofill: ^2.1.2 and pinput:
 
 ## Usage
 
-Provide all required fields including functions. Note that there are two screens to use and classes are EnterSmsPage and PhoneNumberPage respectively
+Provide all required fields including functions. Note that there are two screens to use and classes
+are EnterSmsPage and PhoneNumberPage respectively
 
 ```dart
 Widget build(BuildContext context) {
-    return EnterSmsPage(
-      submit: submit,
-      didntRecieve: didntRecieve,
-      longPressFunction: longPressFunction,
-      apiController: apiController,
-      arguments: widget.arguments,
-      lang_didnt_receive: LocaleKeys.didnt_receive.tr(),
-      lang_enter_sms_code: LocaleKeys.enter_sms_code.tr(),
-      lang_resend_sms: LocaleKeys.resend_sms.tr(),
-      lang_we_will_resend: LocaleKeys.we_will_resend.tr(),
-      lang_next: LocaleKeys.next.tr(),
-      messaging: messaging,
-      platform: platform,
-      resendSms: resendSms,
-      signatureCode: signatureCode,
-      key: Key('sms_s'),
-      pinPutController: _pinPutController,
-      pinPutFocusNode: _pinPutFocusNode,
-    );
-  }
+  return EnterSmsPage(
+    submit: submit,
+    didntRecieve: didntRecieve,
+    longPressFunction: longPressFunction,
+    apiController: apiController,
+    arguments: widget.arguments,
+    lang_didnt_receive: LocaleKeys.didnt_receive.tr(),
+    lang_enter_sms_code: LocaleKeys.enter_sms_code.tr(),
+    lang_resend_sms: LocaleKeys.resend_sms.tr(),
+    lang_we_will_resend: LocaleKeys.we_will_resend.tr(),
+    lang_next: LocaleKeys.next.tr(),
+    messaging: messaging,
+    platform: platform,
+    resendSms: resendSms,
+    signatureCode: signatureCode,
+    key: Key('sms_s'),
+    pinPutController: _pinPutController,
+    pinPutFocusNode: _pinPutFocusNode,
+  );
 }
 ```
 
