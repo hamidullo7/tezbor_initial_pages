@@ -194,3 +194,9 @@ phone number next button click fixed
 ## 1.0.17
 
 svg version changed
+## 1.0.18
+
+null bug fix
+## 1.0.19
+
+null bug fix

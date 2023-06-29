@@ -1,10 +1,10 @@
 name: tezbor_initial_pages
 description: Tezbor initial pages
-version: 1.0.17
+version: 1.0.19
 homepage: https://github.com/tezboruz/tezbor_initial_pages
 
 environment:
-  sdk: '>=2.18.6 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
