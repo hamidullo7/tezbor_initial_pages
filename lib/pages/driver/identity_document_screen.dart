@@ -60,12 +60,7 @@ class _DriverIdentityDocPageState extends State<DriverIdentityDocPage> {
   @override
   Widget build(BuildContext context) {
     // final DriverInfoData driverInfo = ModalRoute.of(context).settings.arguments;
-    var _nextButtonPressed;
-    if (_image != null) {
-      _nextButtonPressed = () async {
-        widget.onNextPress(identityImageId);
-      };
-    }
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -226,12 +221,18 @@ class _DriverIdentityDocPageState extends State<DriverIdentityDocPage> {
                   ),
                   width: MediaQuery.of(context).size.width * 0.7,
                   height: 43,
-                  child: nextButton2(_nextButtonPressed),
+                  child: nextButton2(),
                 ),
               ],
             ),
           ],
         ));
+  }
+
+  void nextButtonP() {
+    if (_image != null) {
+      widget.onNextPress(identityImageId);
+    }
   }
 
   uploadFile(image) async {
@@ -246,12 +247,14 @@ class _DriverIdentityDocPageState extends State<DriverIdentityDocPage> {
     });
   }
 
-  TextButton nextButton2(nextButtonPressed) {
+  TextButton nextButton2() {
     return customFlatButton(
         key: const Key("next"),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         disabledColor: const Color.fromRGBO(206, 208, 206, 1),
-        onPressed: nextButtonPressed,
+        onPressed: () async {
+          nextButtonP();
+        },
         color: const Color.fromRGBO(82, 173, 68, 1),
         textColor: Colors.white,
         label: widget.lang_next.toUpperCase());

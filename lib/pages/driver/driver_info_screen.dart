@@ -81,12 +81,13 @@ class _DriverInfoPageState extends State<DriverInfoPage> {
   Key lastName = const Key("lastName");
   final _formKey = GlobalKey<FormState>();
   int stepNum = 1;
-  bool _enabled = false;
+  bool _enabled = true;
 
   @override
   Widget build(BuildContext context) {
     // driverInfo = ModalRoute.of(context).settings.arguments;
     if (widget.driverInfo.isRegistered) {
+      print("asd Registered");
       setState(() {
         widget.phoneNumberController.text = widget.driverInfo.phoneNumber;
         widget.emailController.text = widget.driverInfo.email;
@@ -103,16 +104,6 @@ class _DriverInfoPageState extends State<DriverInfoPage> {
       setState(() {
         widget.phoneNumberController.text = widget.driverInfo.phoneNumber;
       });
-    }
-    // ignore: prefer_typing_uninitialized_variables
-    var onPressed;
-    if (_enabled) {
-      onPressed = () {
-        final isValid = _formKey.currentState!.validate();
-        if (isValid) {
-          widget.onPressed();
-        }
-      };
     }
 
     return Container(
@@ -214,7 +205,7 @@ class _DriverInfoPageState extends State<DriverInfoPage> {
                               margin: const EdgeInsets.only(bottom: 10),
                               height: 43,
                               width: 332,
-                              child: nextButton1(onPressed),
+                              child: nextButton1(),
                             ),
                           ],
                         ),
@@ -226,13 +217,27 @@ class _DriverInfoPageState extends State<DriverInfoPage> {
     );
   }
 
-  TextButton nextButton1(onPressed) {
+  void nextPress1() {
+    print("asdffONPRESS");
+    if (_enabled) {
+      bool isValid = _formKey.currentState!.validate();
+
+      if (isValid) {
+        widget.onPressed();
+      }
+    }
+    ;
+  }
+
+  TextButton nextButton1() {
     return customFlatButton(
       key: const Key("next"),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       label: widget.lang_next.toUpperCase(),
       disabledColor: const Color.fromRGBO(206, 208, 206, 1),
-      onPressed: onPressed,
+      onPressed: () async {
+        nextPress1();
+      },
       color: Theme.of(context).primaryColor,
       textColor: Colors.white,
     );

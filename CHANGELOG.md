@@ -200,3 +200,7 @@ null bug fix
 ## 1.0.19
 
 null bug fix
+
+## 1.0.20
+
+new version bug fix 
